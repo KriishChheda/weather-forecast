@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    background-color:#E5E1DA;
+}
+
+/* inside the body the first block was given entirely to h1  */
+h1{
+    color:#fff;
+    padding:18px 0;
+    text-align:center;
+    font-size: 1.75rem;
+    background-color:#092635;
+}
+.container{
+    display:flex;
+    gap:35px;
+    padding:30px;
+}
+
+.weatherInput{
+    width:550px;
+
+}
+.weatherInput input{
+    width:100%; /* it will take up the entire space of its parent */
+    height:46px;
+    outline:none; 
+    padding:0 17px;  /* The placeholder and the input container will have a gap of 17px on the right and the left */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin:10px 0 20px 0;
+    font-size: 1.07rem;
+}
+
+.weather-data{
+    width:100%;
+}
+
+/* the following css is for both the buttons */
+.weatherInput button{ 
+    width:100%;   /* it will take up the entire space of its parent */
+    padding:10px 0 ;
+    cursor:pointer;
+    outline:none;
+    border:none;
+    color: #fff;
+    background-color:#092635;
+    border-radius:4px;
+    font-size: 1rem;
+}
+.weatherInput .separator{
+    height:1px;
+    width:100%;
+    background-color:#bbb;
+    margin:25px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.weatherInput .location-btn{
+    background-color: #7E6363;
+}
+
+.current-weather{
+    color:#fff;
+    border-radius:5px;
+    display:flex;
+    padding:20px 70px 20px 20px;
+    background-color: #092635;
+    justify-content:space-between;
+}
+
+.current-weather h2{
+    font-size:1.7rem;
+}
+
+/* selecting all the h4 in div having class weather-data  */
+.weather-data h4{
+    margin-top:12px;
+    font-size:1rem;
+    font-weight:500;
+}
+
+.current-weather .icon>img{
+    max-width: 120px;
+    margin-top: -15px;
+}
+.current-weather .icon h4{
+    margin-top: -10px;
+    text-transform: capitalize;
+}
+
+.days-forecast h2{
+    font-size: 1.5rem;
+    margin:20px 0;
+}
+.weather-cards{
+    display:flex;
+    gap:20px;
+}
+.weather-cards .card{
+    background-color:#7E6363;
+    color:#fff;
+    padding:18px 16px;
+    border-radius:5px;
+    width:calc(100% / 5); /* This will perform a mathematical operation. It will divide the entire screen into 5 equal parts  */
+
+}
+
+.weather-cards .card img{
+    max-width:70px;
+    margin:5px 0 -12px 0;
+}
+
+@media(max-width: 1400px){
+    .weather-data .current-weather{
+        padding:20px;
+    }
+    .weather-cards{
+        flex-wrap:wrap; /* The 5 cards will go start going to the next line on shrinking the screen */
+    }
+    .weather-cards card{
+        width: calc(100% / 4 -15px);
+    }
+}
+
+@media(max-width: 1200px){
+    .weather-cards .card{
+        width:calc(100% / 3 - 15px);
+    }
+}
+
+@media(max-width:950px){
+    .weatherInput{
+        width:450px;
+    }
+    .weather-cards .card{
+        width:calc(100%/2 - 10px);
+    }
+}
+@media(max-width:750px){
+    .container{
+        flex-wrap:wrap;
+        padding:15px;
+    }
+    .weatherInput{
+        width:100%;  /* because for all screen sizes <=950 pixels we had assigned width to 450 px */
+    }
+}
