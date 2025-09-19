@@ -35,7 +35,7 @@ const createWeatherCard = (cityName, weatherItem, index) =>{
 //toFixed(2) fixes the decimal points to 2
 
 const getWeatherDetails=(cityName,lat,lon) => {
-    const WEATHER_API_URL=`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const WEATHER_API_URL=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
     fetch(WEATHER_API_URL).then(res =>res.json()).then(data =>{
     
@@ -83,7 +83,7 @@ const getCityCoordinates = () => {
     const cityName = cityInput.value.trim(); // remove white spaces from user-entered city name
     if (!cityName) return;
 
-    const GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     // Get entered city coordinates (latitude, longitude and name) from the API response
 
